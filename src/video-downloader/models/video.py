@@ -20,3 +20,11 @@ class Video:
             output_path=output_path,
             filename_prefix=filename_prefix
         )
+        print(f"{self.title} download done. Saved in {output_path}")
+
+    def download_audio(self, output_path: str = OUTPUT_PATH, filename_prefix: str = FILENAME_PREFIX):
+        self.youtube_video.streams.get_audio_only().download(
+            output_path=output_path,
+            filename_prefix=filename_prefix
+        )
+        print(f"Audio from {self.title} downloaded. Saved in {output_path}")
